@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 - Timer and Stopwatch</title>
+
+    <link rel="icon" href="https://www.i2symbol.com/images/text-symbols/time-symbol.png">
+    
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/6ccdd39db5.js" crossorigin="anonymous"></script>
+    
+    <!-- AOS STYLE -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="top-navbar">
+            <div class="logo">
+                <img src="https://c.tadst.com/gfx/n/logo/logo-2021--vertical-color-whitebg.svg" alt="">
+            </div>
+            <h2 class="heading">TIMER - STOPWATCH</h2>
+        </nav>
+
+        <nav class="navbar">
+            <div class="links">
+                <a href="/">Timer</a>
+                <a href="stopwatch.html">Stopwatch</a>
+            </div>
+        </nav>
+
+        <div class="timer-card" data-aos="fade-up" data-aos-duration="2000">
+            <div class="card">
+                <div class="time">
+                    <span id="hours">01</span>
+                    <p class="divider" id="divider">:</p>
+                    <span id="minutes">00</span>
+                    <p class="divider" id="divider">:</p>
+                    <span id="seconds">00</span>
+                </div>
+                <div class="buttons">
+                    <div class="start_time">
+                        <button type="button" id="start_btn" class="start_btn">Start</button>
+                    </div>
+                    <div class="pause_time">
+                        <button type="button" id="pause_btn" class="pause_btn">Pause</button>
+                    </div>
+                    <div class="reset_time">
+                        <button type="button" id="reset_btn" class="reset_btn">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div class="edit-icon">
+                <i class="fa-solid fa-pen-to-square" onclick="openModal()"></i>
+            </div>
+        </div>
+
+        <div class="edit-modal" id="editModal">
+            <div class="edit-card">
+                <div class="modal-header">
+                    <h2>Edit Timer</h2>
+                    <i class="fa-solid fa-xmark" onclick="closeModal()"></i>
+                </div>
+                <div class="input-group">
+                    <label for="hrs" class="input-label">Hours</label>
+                    <input type="number" id="hrs" name="hrs" class="input-field" value="0">
+                </div>
+                <div class="input-group">
+                    <label for="mins" class="input-label">Minutes</label>
+                    <input type="number" id="mins" name="mins" class="input-field" value="0">
+                </div>
+                <div class="input-group">
+                    <label for="secs" class="input-label">Seconds</label>
+                    <input type="number" id="secs" name="secs" class="input-field" value="0">
+                </div>
+                <div class="button">
+                    <button type="button" id="submit" class="submitTime" onclick="submitForm()">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- AOS SCRIPT -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oleo Script', cursive;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: block;
+    width: 100%;
+}
+
+.top-navbar {
+    width: 100%;
+    background: #282d34;
+    padding: 0.6rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.top-navbar .logo {
+    width: 90px;
+    display: block;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.top-navbar .heading {
+    font-weight: 400;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #39B5E0, #03C988, #FF7F3F, #FBDF07, #F94892);
+    background-size: 30%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: slide 3s linear infinite alternate-reverse;
+}
+
+@keyframes slide {
+    to {
+        background-position: 100%;
+    }
+}
+
+.navbar {
+    width: 100%;
+    padding: 0.6rem 0;
+    text-align: center;
+    background: #344d675a;
+}
+
+.navbar a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 1.2vw;
+    color: #103050;
+    position: relative;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    background: #222222;
+    width: 0;
+    height: 2px;
+    transition: width 0.4s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.timer-card {
+    width: 500px;
+    max-width: 86%;
+    border-radius: 8px;
+    position: relative;
+    padding: 2rem;
+    margin: 2rem auto;
+    box-shadow: 0 10px 30px #bdcdd6b9;
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.time {
+    display: block;
+    margin: 0 10px;
+}
+
+.time span,
+.time p {
+    display: inline-block;
+    margin: 0 4px;
+    font-size: 3vw;
+}
+
+.buttons>div {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.start_time,
+.reset_time,
+.pause_time {
+    display: block;
+    margin: 0 20px;
+}
+
+.start_btn,
+.reset_btn,
+.pause_btn,
+.lap_btn {
+    padding: 0.5rem 1.8rem;
+    background: #FF7F3F;
+    color: #ffee;
+    font-size: 1vw;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.4s;
+}
+
+.pause_btn {
+    background: #39B5E0;
+}
+
+.reset_btn {
+    background: #FBDF07;
+    color: #102030;
+}
+
+.lap_btn {
+    display: none;
+}
+
+.buttons button:hover {
+    background: #090910;
+    color: #D4ECDD;
+}
+
+.buttons button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.edit-icon {
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+}
+
+.edit-icon i {
+    cursor: pointer;
+}
+
+.edit-modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(6px);
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+}
+
+.edit-card {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5rem;
+    width: 400px;
+    max-width: 85%;
+    background: #fafafaa0;
+    padding: 2.4rem;
+    border-radius: 10px;
+    animation: move 0.2s linear;
+}
+
+@keyframes move {
+    from {
+        top: -4rem;
+    }
+
+    to {
+        top: 5rem;
+    }
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.3rem;
+}
+
+.modal-header h2 {
+    color: #2b2a1f;
+    letter-spacing: 0.8px;
+}
+
+.modal-header i {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #102030;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.input-group {
+    display: flex;
+    margin: 20px 0;
+}
+
+.input-group .input-label {
+    flex-basis: 25%;
+    color: #100f0fbe;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+}
+
+.input-group .input-field {
+    flex-basis: 75%;
+    width: 100%;
+    padding: 0.4rem;
+    background: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid #222;
+    outline: 0;
+}
+
+.input-group .input-field:focus {
+    border: 2px solid #fff;
+    border-radius: 2px;
+}
+
+.button .submitTime {
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #191919ad;
+}
+
+#time_display {
+    font-family: 'Times new roman';
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.laps {
+    width: 800px;
+    max-width: 88%;
+    margin: 50px auto;
+}
+
+.lists li {
+    display: inline-block;
+    list-style: none;
+    height: 4rem;
+    background: white;
+    position: relative;
+    box-shadow: 0 10px 30px #bdcdd6b9;
+    border-radius: 8px;
+    text-align: center;
+    padding: 1rem 2.5rem 0;
+    font-size: 22px;
+    margin: 20px 25px;
+}
+
+@media (max-width: 880px) {
+    .top-navbar .heading {
+        font-size: 17px;
+    }
+
+    .navbar a {
+        font-size: 5vw;
+    }
+
+    .navbar a::before {
+        position: relative;
+    }
+
+    .time span,
+    .time p {
+        font-size: 7vw;
+    }
+
+    .start_time,
+    .reset_time,
+    .pause_time {
+        margin: 0 3.8px;
+    }
+
+    .buttons button {
+        font-size: 2.7vw;
+    }
+
+    .modal-header {
+        margin-bottom: 30px;
+    }
+
+    .input-group .input-label,
+    .input-group .input-field {
+        flex-basis: 100%;
+    }
+}

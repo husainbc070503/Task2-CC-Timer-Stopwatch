@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 - Timer and Stopwatch</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://www.i2symbol.com/images/text-symbols/time-symbol.png">
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/6ccdd39db5.js" crossorigin="anonymous"></script>
+
+    <!-- AOS STYLE -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="top-navbar">
+            <div class="logo">
+                <img src="https://c.tadst.com/gfx/n/logo/logo-2021--vertical-color-whitebg.svg" alt="">
+            </div>
+            <h2 class="heading">TIMER - STOPWATCH</h2>
+        </nav>
+
+        <nav class="navbar">
+            <div class="links">
+                <a href="/">Timer</a>
+                <a href="stopwatch.html">Stopwatch</a>
+            </div>
+        </nav>
+
+        <div class="timer-card" data-aos="fade-up" data-aos-duration="2000">
+            <div class="card">
+                <div class="time">
+                    <p id="time_display">00 : 00 : 00 : 000</p>
+                </div>
+                <div class="buttons">
+                    <div class="start_time">
+                        <button type="button" id="start_stop_btn" class="start_btn">Start</button>
+                        <button type="button" id="lap_btn" class="lap_btn">Lap</button>
+                    </div>
+                    <div class="pause_time">
+                        <button type="button" id="pause_stop_btn" class="pause_btn">Pause</button>
+                    </div>
+                    <div class="reset_time">
+                        <button type="button" id="reset_stop_btn" class="reset_btn">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="laps">
+            <ul id="lists" class="lists"></ul>
+        </div>
+
+    </div>
+
+    <script src="stopwatch.js"></script>
+
+    <!-- AOS SCRIPT -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
